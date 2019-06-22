@@ -240,7 +240,7 @@ if($_SESSION['userEmail']===null){
              </a>
              <ul class="dropdown-menu extended logout">
                  <li><a href="#"><i class=" fa fa-suitcase"></i>Profile </a></li>
-				 <li><a href="#"><i class=" fa fa-suitcase"></i>Edit Profile </a></li>
+				 <li><a href="updateUserInfo.php"><i class=" fa fa-suitcase"></i>Edit Profile </a></li>
                  <li><a href="#"><i class="fa fa-cog"></i> Change Password </a></li>
                  <li><a href="#"><i class="fa fa-key"></i> Log Out </a></li>
              </ul>
