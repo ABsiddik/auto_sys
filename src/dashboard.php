@@ -24,8 +24,7 @@
 						</header>
 						<div class="agileits-box-body clearfix">
 							<div id="hero-area">
-								You are logged as
-								<?php echo $_SESSION['userType'];?>
+								You are logged as Admin
 							</div>
 						</div>
 					</div>

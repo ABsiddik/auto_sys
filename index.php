@@ -39,7 +39,7 @@
 		<div class="w3layouts-main">
 			<h2>Sign In Now </h2>
 			<form action="src/checkUser.php" method="post">
-				<input type="email" class="ggg" name="Email" placeholder="E-MAIL" required="" />
+				<input type="text" class="ggg" name="Username" placeholder="USERNAME" required="" />
 				<input type="password" class="ggg" name="Password" placeholder="PASSWORD" required="" />
 				<span><input type="checkbox" />Remember Me </span>
 				<h6><a href="#">Forgot Password? </a></h6>

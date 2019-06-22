@@ -44,7 +44,7 @@
                 <div class="clearfix"></div>
                 <input type="submit" value="submit" name="register" />
             </form>
-            <p>Already Registered. <a href="login.html">Login </a></p>
+            <p>Already Registered. <a href="index.php">Login </a></p>
 
             <?php
 
