@@ -3,13 +3,9 @@ session_start();
 $email=$_POST['Email'];
 $password=$_POST['Password'];
 
-$host="localhost";
-$user="root";
-$pass="";
-$db="auto_sys";
-$con=mysqli_connect($host,$user,$pass,$db);
+include ('config/db_connection.php');
 
-$str="SELECT * FROM admin_user Where user_email='".$email."' AND user_password='".$password."'";
+$str="SELECT * FROM tbl_user Where user_email='".$email."' AND user_password='".$password."'";
 
 $result=mysqli_query($con,$str);
 
@@ -25,8 +21,6 @@ while($row=mysqli_fetch_array($result)){
 	}
 }
 if($isValidUser===true){
-	/*$strUpdt="UPDATE admin_user SET last_login_date='".$date("Y-m-d H:i:s")."' WHERE user_email='".$email."'";
-	$resultUpdat=mysqli_query($con,$strUpdt);*/
 	header("Location: dashboard.php");
 }else{
 	echo '<META HTTP-EQUIV=REFRESH CONTENT="0; index.php?login=failed">';

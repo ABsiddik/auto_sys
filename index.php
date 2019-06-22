@@ -55,7 +55,7 @@
 				 ?>
 				</span>
 				<input type="submit" value="Sign In" name="login" />
-				<h6><a href="src/register.php">Register Now </a></h6>
+				<h6><a href="register.php">Register Now </a></h6>
 			</form>
 		</div>
 		<!---728x90--->
