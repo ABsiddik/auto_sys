@@ -6,7 +6,7 @@ $password=$_POST['Password'];
 $host="localhost";
 $user="root";
 $pass="";
-$db="pgd";
+$db="auto_sys";
 $con=mysqli_connect($host,$user,$pass,$db);
 
 $str="SELECT * FROM admin_user Where user_email='".$email."' AND user_password='".$password."'";
@@ -21,8 +21,6 @@ while($row=mysqli_fetch_array($result)){
 	$_SESSION['userId'] = $row['user_id'];
 	$_SESSION['userName'] = $row['user_name'];
 	$_SESSION['userPhone'] = $row['user_phone'];
-	$_SESSION['userType'] = $row['user_type'];
-	$_SESSION['userDept'] = $row['user_dept'];
 	$_SESSION['lastLogin'] = $row['last_login_date'];
 	}
 }

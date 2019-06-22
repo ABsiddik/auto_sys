@@ -20,7 +20,7 @@
 							<?php echo $_SESSION['userEmail']; ?>
 						</div>
 						<header class="agileits-box-header clearfix">
-							<h3>Welcome to <?php echo $_SESSION['userDept'];?> </h3>
+							<h3>Welcome to Auto Sys </h3>
 						</header>
 						<div class="agileits-box-body clearfix">
 							<div id="hero-area">
