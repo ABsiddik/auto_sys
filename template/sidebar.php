@@ -19,12 +19,11 @@
                  <li class="sub-menu">
                      <a href="javascript:;">
                          <i class="fa fa-book"></i>
-                         <span>UI Elements </span>
+                         <span>Device </span>
                      </a>
                      <ul class="sub">
-						 <li><a href="typography.html">Typography </a></li>
+						 <li><a href="../src/newDevice.php">Add Device </a></li>
 						 <li><a href="glyphicon.html">glyphicon </a></li>
-                         <li><a href="grids.html">Grids </a></li>
                      </ul>
                  </li>
                 
