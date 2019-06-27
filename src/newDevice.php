@@ -28,7 +28,7 @@ include ('findAllDeviceType.php');
 										<option>Select Device Type</option>
 										<?php
 									 while($row=mysqli_fetch_array($allDeviceType)){
-										 echo '<option value='.$row['id'].'>'.$row['device_types'].'</option>';
+										 echo '<option value='.$row['id'].','.$row['device_types'].'>'.$row['device_types'].'</option>';
 									 }
 									 ?>
 									</select>
