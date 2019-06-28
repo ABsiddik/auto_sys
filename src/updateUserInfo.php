@@ -12,10 +12,15 @@
                          <div class="panel-body">
                              <div class="position-center">
                                  <form method="POST" action="">
-								
+								 <?php echo $_SESSION['userEmail']; ?>
+								 <div class="form-group">
+                                     <label >Username </label>
+                                     <input type="text" class="form-control" name="userName" id="userName" value='<?php echo $_SESSION['userEmail']; ?>'
+									 required disabled/>
+                                 </div>
 								 <div class="form-group">
                                      <label for="firstName">Name </label>
-                                     <input type="text" class="form-control" name="userName" id="userName" placeholder="User Name" 
+                                     <input type="text" class="form-control" name="name" id="name" placeholder="User Name" 
 									 required/>
                                  </div>
 								
