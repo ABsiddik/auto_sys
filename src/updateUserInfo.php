@@ -1,4 +1,25 @@
-<?php include "../template/topbar.php";?>
+<?php include "../template/topbar.php";
+include ('config/db_connection.php');
+$usertId=$_SESSION['userId'];
+$queryUser="SELECT * FROM tbl_user_profile WHERE userId='$usertId';";
+$userResult=mysqli_query($conn, $queryUser);
+if(!$userResult){
+	die("Could not connect: " . mysqli_error($conn));
+	exit;
+}
+$profileId=0;
+$firstName="";
+$lastName="";
+$address="";
+$nid="";
+while($row=mysqli_fetch_array($userResult)) {
+	$profileId=$row['id'];
+	$firstName=$row['firstname'];
+	$lastName=$row['lastname'];
+	$address=$row['address'];
+	$nid=$row['nid_number'];
+}
+?>
 
 <!--main content start-->
  <section id="main-content">
@@ -11,37 +32,48 @@
                          </header>
                          <div class="panel-body">
                              <div class="position-center">
-                                 <form method="POST" action="">
-								 <?php echo $_SESSION['userEmail']; ?>
+                                 <form method="POST" action="saveUpdatedUserInfo.php">
+								 <input type="hidden" name="profileId" id="profileId" value='<?php echo $profileId; ?>'/>
 								 <div class="form-group">
                                      <label >Username </label>
-                                     <input type="text" class="form-control" name="userName" id="userName" value='<?php echo $_SESSION['userEmail']; ?>'
+                                     <input type="text" class="form-control" name="userName" id="userName" value='<?php echo $_SESSION['userName']; ?>'
 									 required disabled/>
                                  </div>
 								 <div class="form-group">
-                                     <label for="firstName">Name </label>
-                                     <input type="text" class="form-control" name="name" id="name" placeholder="User Name" 
+                                     <label >Email </label>
+                                     <input type="text" class="form-control" name="email" id="email" value='<?php echo $_SESSION['userEmail']; ?>'
+									 required disabled/>
+                                 </div>
+								 <div class="form-group">
+                                     <label >Phone </label>
+                                     <input type="text" class="form-control" name="phone" id="phone" value='<?php echo $_SESSION['userPhone']; ?>'
+									 required disabled/>
+                                 </div>
+								 <div class="form-group">
+                                     <label for="firstName">First Name </label>
+                                     <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Enter First Name" 
+									 value='<?php echo $firstName; ?>'
 									 required/>
                                  </div>
 								
                                  <div class="form-group">
-                                     <label for="emailAddrss">Email address </label>
-                                     <input type="email" class="form-control" name="userEmail" id="emailAddrss" placeholder="Enter email" 
-									 required/>
+                                     <label for="lastName">Last Name </label>
+                                     <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter First Name" 
+									 value='<?php echo $lastName; ?>' required/>
                                  </div>
 								 <div class="form-group">
-                                 <select name="nam" id="id" class="form-control" required>
-									 <option>Select Dropdown</option>
-									 <option value="1">1</option>
-									 <option value="2">2</option>
-									 <option value="3">3</option>
-									 <option value="4">4</option>
-									 
-									 </select>
+                                     <label for="address">Address</label>
+                                     <input type="text" class="form-control" name="address" id="address" placeholder="Enter Address" 
+									 value='<?php echo $address; ?>' required/>
+                                 </div>
+								 <div class="form-group">
+                                     <label for="nid">NID</label>
+                                     <input type="text" class="form-control" name="nid" id="nid" placeholder="Enter NID" 
+									 value='<?php echo $nid; ?>' required/>
                                  </div>
 								
 								 <div class="form-group" style="text-align: center;">
-                                     <button type="submit" class="btn btn-info">Save as User </button>
+                                     <button type="submit" class="btn btn-info">Update</button>
                                  </div>
                                  
                              </form>
@@ -50,9 +82,9 @@
 	if(!empty($_GET['status'])){
 				 $message=$_GET['status'];
 				 if($message==='success'){
-					 echo "<script type='text/javascript'>alert('submitted successfully!')</script>";
+					 echo "<script type='text/javascript'>alert('Profile Update successfully done!')</script>";
 				 }else{
-					 echo "<script type='text/javascript'>alert('failed!')</script>";
+					 echo "<script type='text/javascript'>alert('Failed!')</script>";
 				 }
 				 }
    

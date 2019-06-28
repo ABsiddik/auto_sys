@@ -17,7 +17,6 @@ if ($result->num_rows < 1) {
 }
 $isValidUser=false;
  while($row=mysqli_fetch_array($result)) {
- 	echo $row['userEmail'];
 		if($row['userName']===$userName){
 		$isValidUser=true;
 	$_SESSION['userEmail'] = $row['userEmail'];
