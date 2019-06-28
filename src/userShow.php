@@ -4,7 +4,7 @@
    $id = $_GET['id'];
   $conn = mysqli_connect('localhost', 'root', '', 'auto_sys');
 
-  $sql = "SELECT * FROM students WHERE id = $id";
+  $sql = "SELECT * FROM tbl_user_profile WHERE id = $id";
   $result = mysqli_query($conn, $sql);
 
   $std = mysqli_fetch_assoc($result);  

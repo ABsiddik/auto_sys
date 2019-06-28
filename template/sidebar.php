@@ -23,7 +23,7 @@
                      </a>
                      <ul class="sub">
 						 <li><a href="../src/newDevice.php">Add Device </a></li>
-						 <li><a href="glyphicon.html">glyphicon </a></li>
+						 <li><a href="../src/myDevices.php">My Device </a></li>
                      </ul>
                  </li>
                 
