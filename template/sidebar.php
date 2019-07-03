@@ -10,7 +10,7 @@
          <div class="leftside-navigation">
              <ul class="sidebar-menu" id="nav-accordion">
                  <li>
-                     <a class="active" href="index.html">
+                     <a class="active" href="controlPanel.php">
                          <i class="fa fa-dashboard"></i>
                          <span>Dashboard </span>
                      </a>

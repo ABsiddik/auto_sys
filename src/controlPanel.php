@@ -4,6 +4,14 @@
   $conn = mysqli_connect('localhost', 'root', '', 'auto_sys');
 
   $sql = "SELECT * FROM user_device_maping";
+
+  $sql = "SELECT * FROM tbl_access_device";
+  $sql = "SELECT * FROM tbl_device_list";
+  $sql = "SELECT * FROM tbl_device_type";
+
+
+
+
   $result = mysqli_query($conn, $sql);
 
 ?>
@@ -58,59 +66,34 @@
     
     <div class="container">
       <div class="row">
-        <div class="col-md-0">
-          <a class="btn-btn-info" href="#"> device list </a> 
-          <br>
-        <a class="btn-btn-info" href="insertMydevice.php">add newdevice</a>
-
-
+         <div class="col-md-0">
+          <a class="btn-btn-info" href="#"> Device Control Panel </a> 
+        
 
             </div>
+       
         </div>
         <div class="col-md-12">
           <table class="table">
             <thead>
-              <th>id</th>
-              <th>user_id</th>
+              <th>serial_no</th>
               <th>device_id</th>
-              <th>maping_date</th>
-              <th class="action">Action</th>
+              <th>port_no</th>
+              <th>active</th>
+              <th>status</th>
+              <th>switch</th>
+            
 
             </thead>
-            <tbody>
-            <?php while($row = mysqli_fetch_assoc($result)) { ?>
-              <tr>
-                <!-- <td> 1 </td>
-                <td>salman</td>
-                <td>26</td>
-                <td>132</td> -->
-                <td> <?php echo $row['id']?> </td>
-                <td> <?php echo $row['user_id']?> </td>
-                <td> <?php echo $row['device_id']?> </td>
+          
 
-                <?php echo "<td>" . date('Y-m-d', strtotime($row['maping_date'])) . "</td>"; ?>
 
-                  
+            
+
+            
 
 
 
-
-                
-                 
-                <td>
-                  <a class="btn btn-info" href="showMydevice.php?id=<?php echo
-                  $row['id']; ?>"> View </a>  <!--view click & id pass --> 
-                  <a class="btn btn-warning" href="editMydevice.php?id=<?php echo
-                  $row['id']; ?>"> Edit </a>
-                  <a class="btn btn-danger" onclick="return confirm('Are you sure?')" 
-                  href="deleteMydevice.php?id=<?php echo $row['id']; ?>"> Delete </a>
-                </td>
-
-
-              </tr>
-
-              <?php } ?>
-            </tbody>
 
           </table>
       </div>
