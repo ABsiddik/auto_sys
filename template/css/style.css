@@ -812,7 +812,7 @@ header.agileits-box-header.clearfix h3 {
     border-radius: 4px;
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
     box-shadow: 0 1px 1px rgba(0,0,0,.05);
-	padding: 2em;
+	padding: 1em;
 }
 span.panel-title{
 	color:#000000;
@@ -929,7 +929,9 @@ div#graph1,div#graph4,div#graph5,div#graph6,div#graph7,div#graph8,div#graph9 {
     margin: 2em 0;
 }
 .agil-info-calendar {
-    margin: 1.5em 0;
+    margin-right: -15px;
+    margin-left: -15px;
+    /* margin: 1.5em 0; */
 }
 .area-grids-heading h3 {
     font-size: 20px;
