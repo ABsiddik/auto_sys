@@ -8,7 +8,7 @@ $selectDevc="SELECT * FROM tbl_device_list WHERE device_id='$deviceId';";
 $devic=mysqli_query($conn,$selectDevc);
 if($devic->num_rows<1){
     $erorM= 'This Device ID ('.$deviceId.') is not found';
-    echo '<META HTTP-EQUIV=REFRESH CONTENT="0; myDevices1.php?status='.$erorM.'">';
+    echo '<META HTTP-EQUIV=REFRESH CONTENT="0; myDevices.php?status='.$erorM.'">';
     die();
 }
 $deviRowID=0;
@@ -19,7 +19,7 @@ $selectMapDevi="SELECT * FROM user_device_maping WHERE user_id='$usertId' and de
 $mappedDevic=mysqli_query($conn,$selectMapDevi);
 if($mappedDevic->num_rows>0){
     $erorM= 'This Device ID ('.$deviceId.') is already Mapped';
-    echo '<META HTTP-EQUIV=REFRESH CONTENT="0; myDevices1.php?status='.$erorM.'">';
+    echo '<META HTTP-EQUIV=REFRESH CONTENT="0; myDevices.php?status='.$erorM.'">';
     die();
 }
 $currntDat=date("Y/m/d");
@@ -27,10 +27,10 @@ $inserNewMap="INSERT INTO user_device_maping (user_id, device_id, maping_date) V
 
 $result=mysqli_query($conn,$inserNewMap);
 if(!$result){
-        echo '<META HTTP-EQUIV=REFRESH CONTENT="0; myDevices1.php?status='.mysqli_error($conn).'">';
+        echo '<META HTTP-EQUIV=REFRESH CONTENT="0; myDevices.php?status='.mysqli_error($conn).'">';
 
     }else{
-        echo '<META HTTP-EQUIV=REFRESH CONTENT="0; myDevices1.php?status=success">';
+        echo '<META HTTP-EQUIV=REFRESH CONTENT="0; myDevices.php?status=success">';
     }
 
     mysqli_close($conn);
