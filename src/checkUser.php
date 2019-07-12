@@ -23,6 +23,7 @@ $isValidUser=false;
 	$_SESSION['userId'] = $row['id'];
 	$_SESSION['userName'] = $row['userName'];
 	$_SESSION['userPhone'] = $row['userPhone'];
+	$_SESSION['userRole'] = $row['userRole'];
 	}
  }
 

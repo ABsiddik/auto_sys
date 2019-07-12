@@ -22,8 +22,12 @@
                          <span>Device </span>
                      </a>
                      <ul class="sub">
-						 <li><a href="../src/newDevice.php">Add Device </a></li>
-						 <li><a href="../src/myDevices.php">My Device </a></li>
+                     <?php
+                     if($_SESSION['userRole']==='ADMIN'){
+                         echo '<li><a href="../src/newDevice.php">Add Device </a></li>';
+                     }
+                         ?>
+						 <li><a href="../src/myDevices1.php">My Device </a></li>
                      </ul>
                  </li>
                 

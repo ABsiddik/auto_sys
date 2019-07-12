@@ -28,6 +28,11 @@ if($_SESSION['userEmail']===null){
  <script src="../template/js/morris.js"></script>
  <script src="../template/js/jquery.min.js"></script>
  <script src="../template/js/bootstrap.js"></script>
+ <style>
+ thead{background: #c3d9ec;}
+ th{color: #5a5757 !important;
+    font-size: medium !important;}
+ </style>
  </head>
  <body>
  <section id="container">
@@ -242,7 +247,7 @@ if($_SESSION['userEmail']===null){
                  <li><a href="userShow.php"><i class=" fa fa-suitcase"></i>Profile </a></li>
 				 <li><a href="updateUserInfo.php"><i class=" fa fa-suitcase"></i>Edit Profile </a></li>
                  <li><a href="#"><i class="fa fa-cog"></i> Change Password </a></li>
-                 <li><a href="#"><i class="fa fa-key"></i> Log Out </a></li>
+                 <li><a href="logout.php"><i class="fa fa-key"></i> Log Out </a></li>
              </ul>
          </li>
          <!-- user login dropdown end -->

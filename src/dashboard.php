@@ -17,14 +17,14 @@
 					<div class="agileits-box" style="text-align: center;">
 						<div class="toolbar">
 							Hello,
-							<?php echo $_SESSION['userEmail']; ?>
+							<?php echo $_SESSION['userName']; ?>
 						</div>
 						<header class="agileits-box-header clearfix">
 							<h3>Welcome to Auto Sys </h3>
 						</header>
 						<div class="agileits-box-body clearfix">
 							<div id="hero-area">
-								You are logged as Admin
+								You are logged as <?php echo $_SESSION['userRole']; ?>
 							</div>
 						</div>
 					</div>
